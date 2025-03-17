@@ -17,5 +17,7 @@ This project will create a mobile app that allows:
 * [ARCHITECTURE.md](ARCHITECTURE.md)
 * [Reflection.md](Reflection.md)
 * [SRD.md](SRD.md)
-* [Stakeholder Analysis.md](StakeholderAnalysis.md) 
+* [Stakeholder Analysis.md](StakeholderAnalysis.md)
+* [UseCaseDiagram.md](UseCaseDiagram.md)
+* [Test
   
