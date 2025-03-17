@@ -18,6 +18,8 @@ This project will create a mobile app that allows:
 * [Reflection.md](Reflection.md)
 * [SRD.md](SRD.md)
 * [Stakeholder Analysis.md](StakeholderAnalysis.md)
-* [UseCaseDiagram.md](UseCaseDiagram.md)
-* [Test
+* [UseCaseSpecifications.md](UseCaseSpecifications.md)
+* [TestCaseDevelopment.md](TestCaseDevelopment.md)
+* [UseCase.md](UseCase.md)
+  
   
