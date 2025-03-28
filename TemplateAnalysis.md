@@ -1,4 +1,4 @@
-
+## **MediTrack Templates Analysis**
 
 | **Template**          | **Columns & Workflow**                                      | **Automation Features**                                      | **Suitability for Agile**                                      |
 |----------------------|------------------------------------------------------------|-------------------------------------------------------------|---------------------------------------------------------------|
@@ -10,4 +10,4 @@
 ## **Justification:**
 For the MediTrack project, the best-fit GitHub project template is the Automated Kanban:
 
-Automated Kanban: This template is highly suitable for Agile methodologies as it provides streamlined task management through automated progress tracking. As issues progress through the workflow (Backlog → To Do → In Progress → Done), automation removes the need for manual task movement, which saves time and reduces the chance of errors in task tracking. This will be especially useful for MediTrack's fast-paced development environment where tasks need to be tracked efficiently across different stages.
+This template is highly suitable for Agile methodologies as it provides streamlined task management through automated progress tracking. As issues progress through the workflow (Backlog → To Do → In Progress → Done), automation removes the need for manual task movement, which saves time and reduces the chance of errors in task tracking. This will be especially useful for MediTrack's fast-paced development environment where tasks need to be tracked efficiently across different stages.
