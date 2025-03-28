@@ -79,3 +79,19 @@ Aligning Agile principles with the realities of individual development proved to
 Furthermore, the need to balance technical and user-centric stories created a tension. While I recognized the importance of security and performance (US-009, US-010), the allure of developing user-facing features was strong. The temptation to prioritize visually appealing elements over robust backend functionality was a constant struggle. This internal conflict highlighted the need for discipline and a clear understanding of the project's long-term goals.
 
 Ultimately, this exercise in solo Agile planning revealed the inherent limitations of working in isolation. While the principles of Agile are valuable, they are most effective when applied in a collaborative setting. The absence of diverse perspectives and external feedback made the process more challenging, but it also forced me to develop a deeper understanding of the trade-offs and decisions involved in software development.
+
+
+# Reflection on Kanban Template Selection and Customization
+
+## Lessons Learned
+
+- **Importance of Customization**: Choosing and customizing the **Kanban template** helped me realize the importance of aligning task management tools with project-specific requirements. For **MediTrack**, features like task status and **Testing** and **Blocked** columns are vital for tracking the prescription management process.
+  
+- **Automation Benefits**: The **Automated Kanban** template’s automation features (auto-moving issues between columns) significantly enhance workflow management and reduce manual effort. This is essential for **Agile** methodologies as it speeds up task transitions.
+  
+- **Integration with GitHub Issues**: Linking **user stories** and tasks to GitHub Issues ensures traceability and smooth integration between project management and development processes.
+
+## Comparison to Other Tools
+
+While **GitHub Projects** offers a **simple and effective Kanban board** for small teams, it lacks the depth and reporting features of tools like **Jira**. However, its integration with **GitHub Issues** makes it a better fit for development-focused projects like **MediTrack**.
+
