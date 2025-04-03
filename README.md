@@ -21,5 +21,13 @@ This project will create a mobile app that allows:
 * [UseCaseSpecifications.md](UseCaseSpecifications.md)
 * [TestCaseDevelopment.md](TestCaseDevelopment.md)
 * [UseCase.md](UseCase.md)
+* [ActivityWorkflowModeling.md](ActivityWorkflowModeling.md)
+* [AgilePlanning.md](AgilePlanning.md)
+* [Backblog.md](Backblog.md)
+* [KanbanExplanation.md](KanbanExplanation.md)
+* [ObjectStateModelling.md](ObjectStateModelling.md)
+* [SpringPlanning.md](SpringPlanning.md)
+* [TraceabilityMatrix.md](TraceabilityMatrix.md)
+* [UserStories.md](UserStories.md)
   
   
