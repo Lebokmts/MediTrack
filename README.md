@@ -32,6 +32,6 @@ This project will create a mobile app that allows:
 * [DomainModelDescription.md](DomainModelDescription.md)
 * [DesignDecisions.md](DesignDecisions.md)
 * [ClassDiagram.md](ClassDiagram.md)
-* [Reflection_Assingment_9.md](Reflection_Assingment_9.md)
+* [Reflection_Assignment_9.md](Reflection_Assignment_9.md)
   
   
