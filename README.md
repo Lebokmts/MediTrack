@@ -29,7 +29,7 @@ This project will create a mobile app that allows:
 * [SpringPlanning.md](SpringPlanning.md)
 * [TraceabilityMatrix.md](TraceabilityMatrix.md)
 * [UserStories.md](UserStories.md)
-* [DomainModelDescription.md](DesignModelDescription.md)
+* [DomainModelDescription.md](DomainModelDescription.md)
 * [DesignDecisions.md](DesignDecisions.md)
 * [Reflection_Assingment_9](Reflection_Assingment_9)
   
