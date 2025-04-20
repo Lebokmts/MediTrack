@@ -34,4 +34,83 @@ This project will create a mobile app that allows:
 * [ClassDiagram.md](ClassDiagram.md)
 * [Reflection_Assignment_9.md](Reflection_Assignment_9.md)
   
-  
+
+# MediTrack - Creational Design Patterns & Testing
+
+## Language Choice
+This project is implemented in **Java**, as it offers strong support for object-oriented programming and design patterns like Factory, Builder, Singleton, etc.
+
+## Project Structure
+
+```plaintext
+MediTrack/
+├── README.md                    # Project overview and instructions
+├── src/                         # Source code for the main application
+│   ├── Main.java                # Main test file for running patterns
+│   ├── models/                  # Core classes based on class diagram
+│   │   ├── User.java
+│   │   ├── Doctor.java
+│   │   ├── Patient.java
+│   │   ├── Pharmacist.java
+│   │   ├── Prescription.java
+│   │   ├── Medication.java
+│   │   ├── Reminder.java
+│   │   ├── QRCode.java
+│   │   ├── StockNotification.java
+│   │   └── AuditLog.java
+│   ├── factories/               # Simple Factory pattern
+│   │   └── SimpleUserFactory.java
+│   ├── factorymethod/           # Factory Method pattern
+│   │   ├── PrescriptionFactory.java
+│   │   └── BasicPrescriptionFactory.java
+│   ├── abstractfactory/         # Abstract Factory pattern
+│   │   ├── PrescriptionPlanFactory.java
+│   │   ├── StandardPrescriptionFactory.java
+│   │   └── UrgentPrescriptionFactory.java
+│   ├── builders/                # Builder pattern (implemented inside Reminder.java)
+│   ├── prototypes/              # Prototype pattern
+│   │   └── PrescriptionPrototype.java (interface used inside Prescription.java)
+│   └── singletons/              # Singleton pattern
+│       └── AuditLogger.java
+├── test/                        # JUnit test classes
+│   ├── factories/
+│   │   └── SimpleUserFactoryTest.java
+│   ├── factorymethod/
+│   │   └── PrescriptionFactoryTest.java
+│   ├── abstractfactory/
+│   │   └── PrescriptionPlanFactoryTest.java
+│   ├── models/
+│   │   ├── ReminderBuilderTest.java
+│   │   └── PrescriptionPrototypeTest.java
+│   └── singletons/
+│       └── AuditLoggerTest.java
+```
+
+## Implemented Design Patterns
+
+| Pattern           | Location                    | Purpose                                        |
+|-------------------|-----------------------------|------------------------------------------------|
+| Simple Factory    | `/src/factories/`           | Create users (Doctor, Patient, Pharmacist)    |
+| Factory Method    | `/src/factorymethod/`       | Create prescriptions via subclass factories   |
+| Abstract Factory  | `/src/abstractfactory/`     | Create prescription + reminder as a package   |
+| Builder           | `/src/models/Reminder.java` | Build complex Reminder objects step by step   |
+| Prototype         | `/src/models/Prescription.java` | Clone prescription objects                 |
+| Singleton         | `/src/singletons/`          | Ensure one instance of `AuditLogger`          |
+
+## Unit Testing
+
+All patterns are tested using **JUnit 5**. See the `/test` directory for:
+
+- `SimpleUserFactoryTest`
+- `PrescriptionFactoryTest`
+- `PrescriptionPlanFactoryTest`
+- `ReminderBuilderTest`
+- `PrescriptionPrototypeTest`
+- `AuditLoggerTest`
+
+## How to Compile & Run
+
+```bash
+javac models/*.java factories/*.java factorymethod/*.java abstractfactory/*.java singletons/*.java prototypes/*.java Main.java
+java Main
+
