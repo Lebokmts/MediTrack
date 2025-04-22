@@ -110,7 +110,6 @@ All patterns are tested using **JUnit 5**. See the `/test` directory for:
 
 ## How to Compile & Run 
 
-```bash
 javac models/*.java factories/*.java factorymethod/*.java abstractfactory/*.java singletons/*.java prototypes/*.java Main.java
 java Main
 
