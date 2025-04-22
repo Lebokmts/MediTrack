@@ -108,9 +108,20 @@ All patterns are tested using **JUnit 5**. See the `/test` directory for:
 - `PrescriptionPrototypeTest`
 - `AuditLoggerTest`
 
-## How to Compile & Run
+## How to Compile & Run 
 
 ```bash
 javac models/*.java factories/*.java factorymethod/*.java abstractfactory/*.java singletons/*.java prototypes/*.java Main.java
 java Main
+
+## Repository Interface Design
+
+**Generic repository interface** was used to define standard CRUD operations for all domain entities. This avoids repetitive code across entity-specific repositories.
+
+Each entity (e.g., `User`, `Prescription`, `Reminder`) has its own repository interface that extends the generic `Repository<T, ID>`.
+
+This structure:
+- Promotes code reuse
+- Keeps our architecture clean
+- Makes it easy to plug in new storage backends later
 
