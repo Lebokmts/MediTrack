@@ -58,6 +58,12 @@ MediTrack/
 │   │   ├── QRCode.java
 │   │   ├── StockNotification.java
 │   │   └── AuditLog.java
+│   └── repositories/inmemory/      # In-memory repository implementations
+│       ├── InMemoryUserRepository.java
+│       ├── InMemoryPrescriptionRepository.java
+│       ├── InMemoryReminderRepository.java
+│       ├── InMemoryMedicationRepository.java
+│       └── InMemoryAuditLogRepository.java
 │   ├── factories/               # Simple Factory pattern
 │   │   └── SimpleUserFactory.java
 │   ├── factorymethod/           # Factory Method pattern
@@ -84,6 +90,12 @@ MediTrack/
 │   │   └── PrescriptionPrototypeTest.java
 │   └── singletons/
 │       └── AuditLoggerTest.java
+│   └── repositories/               # JUnit 5 test classes for repositories
+│       ├── InMemoryUserRepositoryTest.java
+│       ├── InMemoryPrescriptionRepositoryTest.java
+│       ├── InMemoryReminderRepositoryTest.java
+│       ├── InMemoryMedicationRepositoryTest.java
+│       └── InMemoryAuditLogRepositoryTest.java
 ```
 
 ## Implemented Design Patterns
@@ -115,12 +127,33 @@ java Main
 
 ## Repository Interface Design
 
-**Generic repository interface** was used to define standard CRUD operations for all domain entities. This avoids repetitive code across entity-specific repositories.
+I introduced a **generic `Repository<T, ID>` interface** to define standard CRUD operations. This promotes:
+- Reusability of core logic
+- Clean abstraction for multiple entities
+- Flexibility in implementing various storage strategies (e.g., in-memory, database)
 
-Each entity (e.g., `User`, `Prescription`, `Reminder`) has its own repository interface that extends the generic `Repository<T, ID>`.
+### Entity-Specific Interfaces
+Each domain entity (e.g., `User`, `Prescription`, `Reminder`) extends the generic interface to provide type-safe repository access:
+```java
+public interface UserRepository extends Repository<User, String> {}
 
-This structure:
-- Promotes code reuse
-- Keeps our architecture clean
-- Makes it easy to plug in new storage backends later
+## 💾 In-Memory Repository Implementation
 
+All repositories use `HashMap` to simulate persistent storage. They implement the standard CRUD operations:
+- `save()` → Adds/updates an entry
+- `findById()` → Retrieves an entry by ID
+- `findAll()` → Lists all entries
+- `delete()` → Removes an entry
+
+Example:
+```java
+private final Map<String, User> users = new HashMap<>();
+
+All repositories are unit tested using **JUnit 5**. Each test class verifies:
+- Saving and retrieving data
+- Deleting entries
+- Listing all stored items
+
+To run tests in **NetBeans**:
+- Right-click the test class → **Run File**
+- Or right-click the project → **Test**
