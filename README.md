@@ -134,7 +134,6 @@ I introduced a **generic `Repository<T, ID>` interface** to define standard CRUD
 
 ### Entity-Specific Interfaces
 Each domain entity (e.g., `User`, `Prescription`, `Reminder`) extends the generic interface to provide type-safe repository access:
-```java
 public interface UserRepository extends Repository<User, String> {}
 
 ## 💾 In-Memory Repository Implementation
@@ -146,7 +145,6 @@ All repositories use `HashMap` to simulate persistent storage. They implement th
 - `delete()` → Removes an entry
 
 Example:
-```java
 private final Map<String, User> users = new HashMap<>();
 
 All repositories are unit tested using **JUnit 5**. Each test class verifies:
