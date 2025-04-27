@@ -1,17 +1,21 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ */
 
-import singletons.AuditLogger;
+
+import repositories.inmemory.InMemoryUserRepository;
+import models.User;
+import models.Doctor;
 
 public class Main {
     public static void main(String[] args) {
-        AuditLogger logger1 = AuditLogger.getInstance();
-        AuditLogger logger2 = AuditLogger.getInstance();
+        InMemoryUserRepository userRepo = new InMemoryUserRepository();
+        User doc = new Doctor("D001", "Dr. Smith", "doc@example.com", "1234");
+        userRepo.save(doc);
 
-        logger1.log("Doctor uploaded a prescription.");
-        logger2.log("Pharmacist verified a prescription.");
-
-        // Check if both logger references are the same
-        System.out.println("Same instance? " + (logger1 == logger2)); // should print true
+        userRepo.findById("D001").ifPresent(User::login);
     }
 }
+
 
 
