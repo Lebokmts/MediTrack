@@ -12,3 +12,9 @@
         <exec.mainClass>com.mycompany.meditrack.MediTrack</exec.mainClass>
     </properties>
 </project>
+
+<dependency>
+  <groupId>com.sparkjava</groupId>
+  <artifactId>spark-core</artifactId>
+  <version>2.9.4</version>
+</dependency>
