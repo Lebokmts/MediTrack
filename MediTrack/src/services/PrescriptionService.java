@@ -1,12 +1,39 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 
-/**
- *
- * @author Kelebogile
- */
+package services;
+
+import models.Prescription;
+import repositories.PrescriptionRepository;
+
+import java.util.List;
+import java.util.Optional;
+
 public class PrescriptionService {
-    
+    private final PrescriptionRepository prescriptionRepo;
+
+    public PrescriptionService(PrescriptionRepository prescriptionRepo) {
+        this.prescriptionRepo = prescriptionRepo;
+    }
+
+    public Prescription createPrescription(Prescription prescription) {
+        return prescriptionRepo.save(prescription);
+    }
+
+    public List<Prescription> getAllPrescriptions() {
+        return prescriptionRepo.findAll();
+    }
+
+    public Optional<Prescription> getPrescriptionById(String id) {
+        return prescriptionRepo.findById(id);
+    }
+
+    public void deletePrescription(String id) {
+        prescriptionRepo.delete(id);
+    }
+
+    public Prescription verifyPrescription(String id) {
+        Prescription prescription = prescriptionRepo.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("Prescription not found: " + id));
+        prescription.setStatus("Verified");
+        return prescriptionRepo.save(prescription);
+    }
 }
