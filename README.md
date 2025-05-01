@@ -155,3 +155,11 @@ All repositories are unit tested using **JUnit 5**. Each test class verifies:
 To run tests in **NetBeans**:
 - Right-click the test class → **Run File**
 - Or right-click the project → **Test**
+
+## 📘 API Documentation (OpenAPI)
+
+This project uses OpenAPI 3.0 for documenting its REST API.
+
+- 🔗 [View openapi.yaml](./openapi.yaml)
+- 📖 Open using [Swagger Editor](https://editor.swagger.io/)
+- Copy & paste the content of `openapi.yaml`
