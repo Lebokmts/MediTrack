@@ -95,3 +95,23 @@ Ultimately, this exercise in solo Agile planning revealed the inherent limitatio
 
 While **GitHub Projects** offers a **simple and effective Kanban board** for small teams, it lacks the depth and reporting features of tools like **Jira**. However, its integration with **GitHub Issues** makes it a better fit for development-focused projects like **MediTrack**.
 
+
+# 🪞 Reflection: Assignment 12 – API and Service Layer Development
+
+This assignment was a valuable continuation of the MediTrack system, pushing the project from internal logic and repositories into fully exposed and testable REST APIs. It deepened my understanding of how layered software architecture translates from design to working applications, especially in a healthcare context where data flow and reliability are critical.
+
+## 🔧 Challenges Faced
+
+One of the primary challenges was designing services that both encapsulate business logic and remain decoupled from the data layer. Ensuring clean separation while keeping services testable required thoughtful constructor injection and consistent use of interfaces.
+
+Another challenge was implementing REST APIs without Spring Boot. Using **Spark Java** provided simplicity but also required manual configuration of routes, serialization, and status codes. Documenting the API using **OpenAPI** also took some time to structure correctly, especially when nesting multiple entities and actions under the same path.
+
+## 🧠 Lessons Learned
+
+- The importance of layering: repositories abstract data access, services enforce business rules, and controllers handle requests.
+- How to document APIs effectively using Swagger and YAML.
+- The value of testing services independently before exposing them through HTTP.
+
+This assignment brought together nearly all architectural elements of the MediTrack project and helped me solidify best practices in backend development. It also sets a strong foundation for future extensions, such as switching from in-memory storage to real databases or adding authentication.
+
+*Overall, this task has significantly improved my ability to design and expose robust backend services for real-world applications.*
