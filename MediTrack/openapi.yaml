@@ -1,0 +1,146 @@
+openapi: 3.0.3
+info:
+  title: MediTrack API
+  version: 1.0.0
+  description: REST API for managing prescriptions, users, and reminders in MediTrack.
+
+paths:
+  /api/prescriptions:
+    get:
+      summary: Get all prescriptions
+      responses:
+        '200':
+          description: A list of prescriptions
+    post:
+      summary: Create a new prescription
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Prescription'
+      responses:
+        '201':
+          description: Prescription created
+
+  /api/prescriptions/{id}/verify:
+    put:
+      summary: Verify a prescription
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Prescription verified
+
+  /api/users:
+    get:
+      summary: Get all users
+      responses:
+        '200':
+          description: A list of users
+    post:
+      summary: Register a new user
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/User'
+      responses:
+        '201':
+          description: User registered
+
+  /api/users/{id}:
+    get:
+      summary: Get user by ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: A user object
+    delete:
+      summary: Delete a user
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: User deleted
+
+  /api/reminders:
+    get:
+      summary: Get all reminders
+      responses:
+        '200':
+          description: A list of reminders
+    post:
+      summary: Schedule a new reminder
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Reminder'
+      responses:
+        '201':
+          description: Reminder scheduled
+
+  /api/reminders/{id}/acknowledge:
+    put:
+      summary: Acknowledge a reminder
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Reminder acknowledged
+
+components:
+  schemas:
+    Prescription:
+      type: object
+      properties:
+        prescriptionID:
+          type: string
+        issueDate:
+          type: string
+        expiryDate:
+          type: string
+        status:
+          type: string
+    User:
+      type: object
+      properties:
+        userID:
+          type: string
+        name:
+          type: string
+        email:
+          type: string
+        password:
+          type: string
+    Reminder:
+      type: object
+      properties:
+        reminderID:
+          type: string
+        note:
+          type: string
+        time:
+          type: string
+        recurring:
+          type: boolean
