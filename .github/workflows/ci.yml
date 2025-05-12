@@ -34,7 +34,7 @@ jobs:
         jar --create --file=build/MediTrack.jar -C out .
 
     - name: Upload JAR Artifact
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: mediTrack-build
         path: build/MediTrack.jar
