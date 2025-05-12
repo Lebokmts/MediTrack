@@ -1,0 +1,35 @@
+name: Release MediTrack
+
+on:
+  push:
+    tags:
+      - 'v*.*.*' 
+
+jobs:
+  build-and-release:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Set up Java
+      uses: actions/setup-java@v3
+      with:
+        java-version: '17'
+        distribution: 'adopt'
+
+    - name: Compile project
+      run: javac -d out $(find src -name "*.java")
+
+    - name: Create JAR
+      run: |
+        mkdir -p build
+        jar --create --file=build/MediTrack.jar -C out .
+
+    - name: Upload JAR to Release
+      uses: softprops/action-gh-release@v1
+      with:
+        files: build/MediTrack.jar
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
