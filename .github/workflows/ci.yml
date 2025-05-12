@@ -1,5 +1,4 @@
-# 📁 .github/workflows/ci.yml
-name: Java CI
+name: Java CI/CD
 
 on:
   push:
@@ -8,23 +7,34 @@ on:
     branches: [ main ]
 
 jobs:
-  build:
+  build-and-test:
     runs-on: ubuntu-latest
 
     steps:
     - name: Checkout code
       uses: actions/checkout@v3
 
-    - name: Set up JDK
+    - name: Set up Java
       uses: actions/setup-java@v3
       with:
         java-version: '17'
         distribution: 'adopt'
 
     - name: Compile project
-      run: javac -version
+      run: javac -d out $(find src -name "*.java")
 
-    - name: Run tests
+    - name: Run tests (manual for now)
       run: |
-        echo "Running tests..."
-        # You can add actual test command if using Maven/Gradle
+        echo "Tests would run here."
+        echo "Simulate test success."
+
+    - name: Package into JAR
+      run: |
+        mkdir -p build
+        jar --create --file=build/MediTrack.jar -C out .
+
+    - name: Upload JAR Artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: mediTrack-build
+        path: build/MediTrack.jar
