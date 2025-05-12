@@ -1,10 +1,12 @@
-name: Java CI/CD
+name: Java CI/CD Pipelines
 
 on:
   push:
-    branches: [ main ]
+    branches: 
+    - '**'
   pull_request:
-    branches: [ main ]
+    branches: 
+    - main 
 
 jobs:
   build-and-test:
