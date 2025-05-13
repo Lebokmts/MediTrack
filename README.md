@@ -163,3 +163,53 @@ This project uses OpenAPI 3.0 for documenting its REST API.
 - 🔗 [View openapi.yaml](./openapi.yaml)
 - 📖 Open using [Swagger Editor](https://editor.swagger.io/)
 - Copy & paste the content of `openapi.yaml`
+
+## CI/CD Pipeline Overview
+
+MediTrack uses GitHub Actions for continuous integration and delivery to ensure code quality and automate builds.
+
+### Workflow Summary
+
+- **Trigger:** Runs on every push and pull request to `main`
+- **Build & Test Job:**
+  - Compiles all Java classes from `src/`
+  - Simulates or runs unit tests
+- **Release Job:**
+  - Triggered only on pushes to `main`
+  - Packages the app as `MediTrack.jar`
+  - Uploads the artifact as a downloadable file
+
+### Branch Protection Rules
+
+The `main` branch is protected to ensure:
+- Pull request reviews are required
+- Status checks (CI workflow) must pass
+- Direct pushes and force pushes are blocked
+
+### Releasing a New Version
+
+To create a new release:
+1. Push code to the `main` branch
+2. The workflow will:
+   - Build and package the project
+   - Upload the `.jar` as a release artifact
+
+You can find the release artifacts in the **Actions → Artifacts** tab or link them to GitHub Releases.
+
+---
+
+### Download the Build
+
+After a successful run:
+- Navigate to **Actions**
+- Select the latest completed workflow
+- Scroll to **Artifacts** and download `meditrack-release`
+
+---
+
+### Maintainer Notes
+
+- Update CI logic in `.github/workflows/ci.yml`
+- To run tests manually, insert your JUnit command under `Simulate Unit Tests`
+- Protect the `main` branch via repository **Settings → Branch Rulesets**
+
