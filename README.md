@@ -1,3 +1,11 @@
+## Getting Started
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/your-username/MediTrack.git
+
+
 # MediTrack
 
 MediTrack is a mobile application designed to digitize prescriptions and streamline medication management for patients and pharmacists. It aims to improve medication adherence and reduce prescription fraud.
