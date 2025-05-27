@@ -36,4 +36,9 @@ public class PrescriptionService {
         prescription.setStatus("Verified");
         return prescriptionRepo.save(prescription);
     }
+
+    public List<Prescription> searchPrescriptionsByPatientName(String name) {
+        return prescriptionRepo.searchByPatientName(name);
+    }
+
 }

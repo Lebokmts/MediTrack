@@ -46,6 +46,18 @@ public class PrescriptionController {
             service.deletePrescription(req.params("id"));
             return "Prescription deleted.";
         });
+
+        // Get prescription by user name
+        get("/api/prescriptions/search", (req, res) -> {
+            String nameQuery = req.queryParams("name");
+            if (nameQuery == null || nameQuery.isEmpty()) {
+                res.status(400);
+                return "Query parameter 'name' is required.";
+            }
+            res.type("application/json");
+            return gson.toJson(service.searchPrescriptionsByPatientName(nameQuery));
+        });
+
     }
 }
 
